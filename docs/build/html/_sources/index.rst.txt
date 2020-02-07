@@ -10,15 +10,5 @@ Welcome to psnIDS's documentation!
    :maxdepth: 2
    :caption: Table of Contents:
 
-   test.md
-   helloworld_2.md
-
-
-
-Indices and tables
-==================
-
-* :ref:`genindex`
-* :ref:`modindex`
-* :ref:`search`
-
+   test
+   helloworld_2
