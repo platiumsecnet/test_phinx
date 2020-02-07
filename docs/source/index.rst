@@ -8,7 +8,7 @@ Welcome to psnIDS's documentation!
 
 .. toctree::
    :maxdepth: 2
-   :caption: Contents:
+   :caption: Table of Contents:
 
 .. toctree::
    :maxdepth: 2
