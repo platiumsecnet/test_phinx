@@ -10,10 +10,6 @@ Welcome to psnIDS's documentation!
    :maxdepth: 2
    :caption: Table of Contents:
 
-.. toctree::
-   :maxdepth: 2
-   :caption: Contents:
-
    test.md
    helloworld_2.md
 
