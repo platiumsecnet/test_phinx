@@ -18,7 +18,7 @@
 
 
 # -- Project information -----------------------------------------------------
-#import sphinx_rtd_theme
+import sphinx_rtd_theme
 
 project = u'psnIDS'
 copyright = u'2020, platiumsecnet'
@@ -40,7 +40,7 @@ release = u''
 # extensions coming with Sphinx (named 'sphinx.ext.*') or your custom
 # ones.
 extensions = [
-#    "sphinx_rtd_theme",
+    "sphinx_rtd_theme",
 ]
 
 # Add any paths that contain templates here, relative to this directory.
@@ -77,8 +77,8 @@ pygments_style = None
 # a list of builtin themes.
 #
 #html_theme = 'alabaster'
-#html_theme = "sphinx_rtd_theme"
-html_theme = "bizstyle"
+html_theme = "sphinx_rtd_theme"
+#html_theme = "bizstyle"
 
 # Theme options are theme-specific and customize the look and feel of a theme
 # further.  For a list of options available for each theme, see the
