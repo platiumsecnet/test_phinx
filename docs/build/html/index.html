@@ -8,7 +8,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>Welcome to psnIDS’s documentation! &mdash; psnIDS  documentation</title>
+  <title>Configuration of Project Environment &mdash; psnIDS  documentation</title>
   
 
   
@@ -80,8 +80,21 @@
             
               <!-- Local TOC -->
               <div class="local-toc"><ul>
-<li><a class="reference internal" href="#">Welcome to psnIDS’s documentation!</a></li>
+<li><a class="reference internal" href="#">Configuration of Project Environment</a><ul>
+<li><a class="reference internal" href="#overview-on-how-to-run-this-api">Overview on How to Run this API</a></li>
+<li><a class="reference internal" href="#setup-procedure">Setup procedure</a></li>
+<li><a class="reference internal" href="#endpoints-of-the-teacher-api">Endpoints of the Teacher API</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#documentation-for-the-code">Documentation for the Code</a><ul>
+<li><a class="reference internal" href="#teacherapi-main">TeacherAPI main</a></li>
+<li><a class="reference internal" href="#teacherapi-controller">TeacherAPI controller</a></li>
+<li><a class="reference internal" href="#teacherapi-models">TeacherAPI models</a></li>
+<li><a class="reference internal" href="#teacherapi-database">TeacherAPI database</a></li>
+<li><a class="reference internal" href="#teacherapi-populate">TeacherAPI populate</a></li>
 <li><a class="reference internal" href="#indices-and-tables">Indices and tables</a></li>
+</ul>
+</li>
 </ul>
 </div>
             
@@ -127,7 +140,7 @@
     
       <li><a href="#">Docs</a> &raquo;</li>
         
-      <li>Welcome to psnIDS’s documentation!</li>
+      <li>Configuration of Project Environment</li>
     
     
       <li class="wy-breadcrumbs-aside">
@@ -146,18 +159,180 @@
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
            <div itemprop="articleBody">
             
-  <div class="section" id="welcome-to-psnids-s-documentation">
-<h1>Welcome to psnIDS’s documentation!<a class="headerlink" href="#welcome-to-psnids-s-documentation" title="Permalink to this headline">¶</a></h1>
+  <div class="section" id="configuration-of-project-environment">
+<h1>Configuration of Project Environment<a class="headerlink" href="#configuration-of-project-environment" title="Permalink to this headline">¶</a></h1>
+<p>This is an API that manages a list of teachers using Python3, Flask, and SQLAlchemy.</p>
+<div class="section" id="overview-on-how-to-run-this-api">
+<h2>Overview on How to Run this API<a class="headerlink" href="#overview-on-how-to-run-this-api" title="Permalink to this headline">¶</a></h2>
+<ol class="arabic simple">
+<li>Either install a Python IDE or create a Python virtual environment to install the packages required</li>
+<li>Install packages required</li>
+<li>Install MySQL 5.7</li>
+<li>Install Postman extension in Chrome or install curl</li>
+</ol>
+</div>
+<div class="section" id="setup-procedure">
+<h2>Setup procedure<a class="headerlink" href="#setup-procedure" title="Permalink to this headline">¶</a></h2>
+<ol class="arabic">
+<li><dl class="first docutils">
+<dt>Configure project environment (Either A. Install Pycharm OR B. Create a Virtual Environment)</dt>
+<dd><ol class="first last upperalpha">
+<li><dl class="first docutils">
+<dt>Install Pycharm (www.jetbrains.com/pycharm/download/)</dt>
+<dd><ul class="first last">
+<li><p class="first">Open the Teacher API Directory (File -&gt; Open)</p>
+</li>
+<li><dl class="first docutils">
+<dt>Configure the Base Project Interpreter (File -&gt; Settings -&gt; Project Interpreter)</dt>
+<dd><ul class="first simple">
+<li><dl class="first docutils">
+<dt>Base Project Interpreter: pyenv version 3.6.2 (‘path to .pyenv version 3.6.2’/bin/python)</dt>
+<dd>(pyenv was installed before creating the new project through ‘pyenv install 3.6.3’)</dd>
+</dl>
+</li>
+</ul>
+<div class="last admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">In my case, when I tried to use the suggested base interpreter set by Pycharm, installing packages only appeared to be successful according to the response message, but the packages do not appear in the package list and modules imported from them do not get resolved. Thus, I resorted to the pyenv.</p>
+</div>
+</dd>
+</dl>
+</li>
+<li><p class="first">Manually install packages to project interpreter (Pycharm -&gt; Preferences -&gt; Project -&gt; Project Interpreter -&gt; plus button on the lower left side of the package table) and apply changes OR type the command below on the activated virtual environment.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">pip</span> <span class="n">install</span> <span class="o">-</span><span class="n">r</span> <span class="n">requirements</span><span class="o">.</span><span class="n">txt</span>
+</pre></div>
+</div>
+</li>
+</ul>
+</dd>
+</dl>
+</li>
+<li><dl class="first docutils">
+<dt>Create a Python Virtual Environment</dt>
+<dd><ul class="first last">
+<li><p class="first">Install virtualenv:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">sudo</span> <span class="n">pip</span> <span class="n">install</span> <span class="n">virtualenv</span>
+</pre></div>
+</div>
+</li>
+<li><p class="first">Create virtialenv:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">virtualenv</span> <span class="o">-</span><span class="n">p</span> <span class="n">python3</span> <span class="o">&lt;</span><span class="n">name</span> <span class="n">of</span> <span class="n">virtualenv</span><span class="o">&gt;</span>
+</pre></div>
+</div>
+</li>
+<li><p class="first">Install requirements:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">pip</span> <span class="n">install</span> <span class="o">-</span><span class="n">r</span> <span class="n">requirements</span><span class="o">.</span><span class="n">txt</span>
+</pre></div>
+</div>
+</li>
+</ul>
+</dd>
+</dl>
+</li>
+</ol>
+</dd>
+</dl>
+</li>
+<li><dl class="first docutils">
+<dt>Install MySQL</dt>
+<dd><ol class="first last upperalpha">
+<li><p class="first">Search on the web on how to install MySQL in your OS</p>
+</li>
+<li><dl class="first docutils">
+<dt>Create database through piping</dt>
+<dd><blockquote class="first">
+<div><p>mysql -u root &lt; &lt;Path to file&gt;/create_db.sql</p>
+</div></blockquote>
+<ul class="last simple">
+<li>NOTE: depending on your mysql config, you need to provide your password if you have one</li>
+</ul>
+</dd>
+</dl>
+</li>
+</ol>
+</dd>
+</dl>
+</li>
+<li><dl class="first docutils">
+<dt>Initialize and Populate Company Database</dt>
+<dd><ol class="first last upperalpha">
+<li><dl class="first docutils">
+<dt>Edit line 14 of teacherAPI/database.py and use the correct url to your mysql</dt>
+<dd><ul class="first simple">
+<li>In my case, I’m using the root and has a password of ‘password’</li>
+</ul>
+<p class="last">‘mysql://root:&lt;password&gt;&#64;localhost/Teacher’</p>
+</dd>
+</dl>
+</li>
+<li><dl class="first docutils">
+<dt>Either run the line below</dt>
+<dd><p class="first">$ sh database_populator.sh</p>
+<p class="last">OR</p>
+</dd>
+</dl>
+</li>
+<li><p class="first">Use the python interactive shell and run the lines below:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>$ python
+&gt;&gt; from teacherAPI.database import init_db;
+&gt;&gt; init_db();
+&gt;&gt; from teacherAPI.populate import populate;
+&gt;&gt; populate()
+</pre></div>
+</div>
+</li>
+</ol>
+</dd>
+</dl>
+</li>
+<li><p class="first">Run app.py:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">python</span> <span class="n">app</span><span class="o">.</span><span class="n">py</span>
+</pre></div>
+</div>
+</li>
+<li><p class="first">Refer to TeacherAPI controller on how to test the code through curl</p>
+</li>
+</ol>
+</div>
+<div class="section" id="endpoints-of-the-teacher-api">
+<h2>Endpoints of the Teacher API<a class="headerlink" href="#endpoints-of-the-teacher-api" title="Permalink to this headline">¶</a></h2>
+<ol class="arabic simple">
+<li>Insert a new teacher record</li>
+<li>Update an existing teacher record</li>
+<li>Delete teacher record</li>
+<li>Get teacher record details</li>
+<li>List all teacher records</li>
+<li>Filter list of teachers using wildcard search</li>
+</ol>
+</div>
+</div>
+<div class="section" id="documentation-for-the-code">
+<h1>Documentation for the Code<a class="headerlink" href="#documentation-for-the-code" title="Permalink to this headline">¶</a></h1>
 <div class="toctree-wrapper compound">
 </div>
+<div class="section" id="teacherapi-main">
+<h2>TeacherAPI main<a class="headerlink" href="#teacherapi-main" title="Permalink to this headline">¶</a></h2>
+</div>
+<div class="section" id="teacherapi-controller">
+<h2>TeacherAPI controller<a class="headerlink" href="#teacherapi-controller" title="Permalink to this headline">¶</a></h2>
+</div>
+<div class="section" id="teacherapi-models">
+<h2>TeacherAPI models<a class="headerlink" href="#teacherapi-models" title="Permalink to this headline">¶</a></h2>
+</div>
+<div class="section" id="teacherapi-database">
+<h2>TeacherAPI database<a class="headerlink" href="#teacherapi-database" title="Permalink to this headline">¶</a></h2>
+</div>
+<div class="section" id="teacherapi-populate">
+<h2>TeacherAPI populate<a class="headerlink" href="#teacherapi-populate" title="Permalink to this headline">¶</a></h2>
 </div>
 <div class="section" id="indices-and-tables">
-<h1>Indices and tables<a class="headerlink" href="#indices-and-tables" title="Permalink to this headline">¶</a></h1>
+<h2>Indices and tables<a class="headerlink" href="#indices-and-tables" title="Permalink to this headline">¶</a></h2>
 <ul class="simple">
 <li><a class="reference internal" href="genindex.html"><span class="std std-ref">Index</span></a></li>
 <li><a class="reference internal" href="py-modindex.html"><span class="std std-ref">Module Index</span></a></li>
 <li><a class="reference internal" href="search.html"><span class="std std-ref">Search Page</span></a></li>
 </ul>
+</div>
 </div>
 
 
