@@ -1,2 +1,0 @@
-DELOYMENT GUIDE
----

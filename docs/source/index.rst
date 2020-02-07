@@ -10,5 +10,4 @@ Welcome to psnIDS's documentation!
    :maxdepth: 2
    :caption: Table of Contents:
 
-   test
-   helloworld_2
+   about
